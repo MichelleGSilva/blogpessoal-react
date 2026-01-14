@@ -1,88 +1,36 @@
 function Home() {
-  return (
-    <>
-      <div
-        style={{
-          backgroundColor: "#312e81",
-          display: "flex",
-          justifyContent: "center"
-        }}
-      >
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            color: "white",
-            width: "100%",
-            maxWidth: "1280px"
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "1rem",
-              alignItems: "center",
-              justifyContent: "center",
-              paddingTop: "1rem",
-              paddingBottom: "1rem"
-            }}
-          >
-            <h2
-              style={{
-                fontSize: "3rem",
-                fontWeight: "bold"
-              }}
-            >
-              Seja Bem Vinde ao Blog da Mi! 💫
-            </h2>
+    return (
+        <>
+            <div className="bg-orange-500 flex justify-center">
+                <div className='container grid grid-cols-2 text-white'>
+                    <div className="flex flex-col gap-4 items-center justify-center py-4">
+                        <h2 className='text-5xl font-bold'>
+                            Seja Bem Vinda ao Blog da Mi! 🤍
+                        </h2>
+                        <p className='text-xl'>
+                            Um espaço feito com carinho para compartilhar ideias, aprendizados e inspirações.
+                        </p>
 
-            <p
-              style={{
-                fontSize: "1.25rem"
-              }}
-            >
-              Expresse aqui seus pensamentos e opiniões
-            </p>
+                        <div className="flex justify-around gap-4">
+                            <div className='rounded text-white 
+                                            border-white border-solid border-2 py-2 px-4'
+                                >
+                                Nova Postagem
+                            </div>
+                        </div>
+                    </div>
 
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-around",
-                gap: "1rem"
-              }}
-            >
-              <div
-                style={{
-                  borderRadius: "0.5rem",
-                  color: "white",
-                  border: "2px solid white",
-                  padding: "0.5rem 1rem"
-                }}
-              >
-                Nova Postagem
-              </div>
+                    <div className="flex justify-center ">
+                        <img
+                            src="https://ik.imagekit.io/k8aunjtbla/minha-imagem-costa.png"
+                            alt="Imagem Página Home"
+                            className='w-2/3'
+                        />
+                    </div>
+                </div>
             </div>
-          </div>
-
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center"
-            }}
-          >
-            <img
-              src="https://i.imgur.com/fyfri1v.png"
-              alt="Imagem Página Home"
-              style={{
-                width: "66%"
-              }}
-            />
-          </div>
-        </div>
-      </div>
-    </>
-  );
+        </>
+    )
 }
 
-export default Home;
+export default Home
