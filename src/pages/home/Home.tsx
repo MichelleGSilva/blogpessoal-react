@@ -4,8 +4,9 @@ function Home() {
             <div className="bg-orange-500 flex justify-center">
                 <div className='container grid grid-cols-2 text-white'>
                     <div className="flex flex-col gap-4 items-center justify-center py-4">
-                        <h2 className='text-5xl font-bold'>
-                            Seja Bem Vinda ao Blog da Mi! 🤍
+                        <h2 className='text-5xl font-bold text-center'>
+                            Seja Bem Vinda ao <br/>
+                            Blog da Mi! 🤍
                         </h2>
                         <p className='text-xl'>
                             Um espaço feito com carinho para compartilhar ideias, aprendizados e inspirações.
@@ -22,7 +23,7 @@ function Home() {
 
                     <div className="flex justify-center ">
                         <img
-                            src="https://ik.imagekit.io/k8aunjtbla/minha-imagem-costa.png"
+                            src="https://ik.imagekit.io/k8aunjtbla/minha-imagem-frente.png?updatedAt=1768416876143g"
                             alt="Imagem Página Home"
                             className='w-2/3'
                         />
