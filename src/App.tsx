@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Footer from './components/footer/Footer'
 import Navbar from './components/navbar/Navbar'
+import FormTema from './components/tema/formtema/FormTema'
 import Cadastro from './pages/cadastro/Cadastro'
 import Home from './pages/home/Home'
 import Login from './pages/login/Login'
@@ -19,6 +20,8 @@ function App() {
 						<Route path="/home" element={<Home />} />
 						<Route path="/cadastro"	element={<Cadastro />} />
 						<Route path="/temas" element={<ListaTemas />} />
+						<Route path="/cadastrartema" element={<FormTema />} />
+						<Route path="/editartema/:id" element={<FormTema />} />
 					</Routes>
 				</div>
 				<Footer />
