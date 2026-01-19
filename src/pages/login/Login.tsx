@@ -85,7 +85,7 @@ function Login() {
                         </Link>
                     </p>
                 </form>
-                 <div className="bg-[url('https://ik.imagekit.io/k8aunjtbla/foto-cadastro')] lg:block hidden bg-no-repeat 
+                 <div className="bg-[url('https://ik.imagekit.io/k8aunjtbla/100NeuraTech_arquivo_1.png')] lg:block hidden bg-no-repeat 
                             w-full min-h-screen bg-cover bg-center"
                 ></div>
             </div>
