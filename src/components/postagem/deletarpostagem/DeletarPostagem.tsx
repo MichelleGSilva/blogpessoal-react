@@ -1,31 +1,30 @@
 import { useState, useContext, useEffect } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { AuthContext } from "../../../contexts/AuthContext"
-import type Tema from "../../../models/Tema"
+import type Postagem from "../../../models/Postagem"
 import { buscar, deletar } from "../../../services/Service"
-import { ClipLoader } from "react-spinners";
+import { ClipLoader } from "react-spinners"
 
-function DeletarTema() {
+function DeletarPostagem() {
 
     const navigate = useNavigate()
 
-    const [tema, setTema] = useState<Tema>({} as Tema) // tema no singular pq só deleta um tema por vez
-
     const [isLoading, setIsLoading] = useState<boolean>(false)
-    
+    const [postagem, setPostagem] = useState<Postagem>({} as Postagem)
+
+    const { id } = useParams<{ id: string }>()
+
     const { usuario, handleLogout } = useContext(AuthContext)
     const token = usuario.token
 
-    const { id } = useParams<{ id: string }>() //pega o id da url atráves do hook useParams
-
-    async function buscarPorId(id: string) { //busca o tema pelo id
+    async function buscarPorId(id: string) {
         try {
-            await buscar(`/temas/${id}`, setTema, { // service buscar encontre as infos do tema a ser excluido
+            await buscar(`/postagens/${id}`, setPostagem, {
                 headers: {
                     'Authorization': token
                 }
             })
-        } catch (error: any) { // se houver erro o catch pega - geralmente só de autorização 401
+        } catch (error: any) {
             if (error.toString().includes('401')) {
                 handleLogout()
             }
@@ -40,50 +39,56 @@ function DeletarTema() {
     }, [token])
 
     useEffect(() => {
-        if (id !== undefined) { // se o id existir, chama a função buscarPorId
+        if (id !== undefined) {
             buscarPorId(id)
         }
     }, [id])
 
-    async function deletarTema() {
-        setIsLoading(true) // inicia o estado de carregamento
+    async function deletarPostagem() {
+        setIsLoading(true)
 
-        try { // tenta deletar o tema
-            await deletar(`/temas/${id}`, { // service deletar para excluir o tema
-                headers: { // passa o token no cabeçalho da requisição
+        try {
+            await deletar(`/postagens/${id}`, {
+                headers: {
                     'Authorization': token
                 }
             })
 
-            alert('Tema deletado com sucesso')
+            alert('Postagem apagada com sucesso')
 
-        } catch (error: any) { // erro 401 token inválido ou expirado / erros genericos
+        } catch (error: any) {
             if (error.toString().includes('401')) {
                 handleLogout()
             }else {
-                alert('Erro ao deletar o tema.')
+                alert('Erro ao deletar a postagem.')
             }
         }
 
-        setIsLoading(false) // finaliza o estado de carregamento
-        retornar() // retorna para a lista de temas
+        setIsLoading(false)
+        retornar()
     }
 
     function retornar() {
-        navigate("/temas")
+        navigate("/postagens")
     }
     
     return (
         <div className='container w-1/3 mx-auto'>
-            <h1 className='text-4xl text-center my-4'>Deletar tema</h1>
+            <h1 className='text-4xl text-center my-4'>Deletar Postagem</h1>
+
             <p className='text-center font-semibold mb-4'>
-                Você tem certeza de que deseja apagar o tema a seguir?</p>
-            <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
+                Você tem certeza de que deseja apagar a postagem a seguir?
+            </p>
+
+            <div className='border flex flex-col rounded-2xl overflow-hidden justify-between w-full bg-emerald-100'>
                 <header 
                     className='py-2 px-6 bg-orange-600 text-white font-bold text-2xl'>
-                    Tema
+                    Postagem
                 </header>
-                <p className='p-8 text-3xl bg-emerald-100 h-full'>{tema.descricao}</p>
+                <div className="p-4">
+                    <p className='text-xl h-full'>{postagem.titulo}</p>
+                    <p>{postagem.texto}</p>
+                </div>
                 <div className="flex">
                     <button 
                         className='text-slate-100 bg-emerald-500 hover:bg-emerald-700 w-full py-2'
@@ -92,8 +97,8 @@ function DeletarTema() {
                     </button>
                     <button 
                         className='w-full text-slate-100 bg-amber-500 
-                                   hover:bg-amber-700 flex items-center justify-center'
-                                   onClick={deletarTema}>
+                        hover:bg-amber-700 flex items-center justify-center'
+                        onClick={deletarPostagem}>
 
                         { isLoading ? 
                             <ClipLoader 
@@ -102,11 +107,12 @@ function DeletarTema() {
                             /> : 
                             <span>Sim</span>
                         }
-
+                        
                     </button>
                 </div>
             </div>
         </div>
     )
 }
-export default DeletarTema
+
+export default DeletarPostagem
