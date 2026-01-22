@@ -5,6 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
 import type Tema from "../../../models/Tema";
 import { buscar } from "../../../services/Service";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function ListaTemas() {
 
@@ -19,7 +20,7 @@ const navigate = useNavigate(); // hook de navegação -> "teletransporte de tel
 
     useEffect(() => { // verifica se o usuário está autenticado
         if (token === '') { // se não houver token (usuário não autenticado)
-            alert('Você precisa estar logado!')
+            ToastAlerta("Você precisa estar logado", 'info')
             navigate('/')
         }
     }, [token])
@@ -49,11 +50,13 @@ const navigate = useNavigate(); // hook de navegação -> "teletransporte de tel
         <>
 
          {isLoading && (
-    <SyncLoader
-        color="#312e81"
-    	size={32}
-	/>
-)}
+          <div className="flex justify-center w-full my-8">
+            <SyncLoader
+             color="#047857"
+             size={32}
+            />
+        </div>
+    )}
             <div className="flex justify-center w-full my-4">
                 <div className="container flex flex-col">
 
