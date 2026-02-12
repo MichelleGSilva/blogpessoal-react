@@ -73,4 +73,3 @@ npm run dev
 
 
 
-git clone https://github.com/MichelleGSilva/blogpessoal-react.git
