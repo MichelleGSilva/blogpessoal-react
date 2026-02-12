@@ -1,10 +1,10 @@
-# 📝 Blog Pessoal – Frontend (React)
+# 📝 Blog Pessoal – Front-end (React)
 
-Aplicação frontend desenvolvida em **React** para um sistema de Blog Pessoal, permitindo cadastro, autenticação de usuários e gerenciamento de postagens.
+Aplicação front-end desenvolvida em **React** para um sistema de Blog Pessoal, permitindo cadastro, autenticação de usuários e gerenciamento de postagens.
 
-Este projeto consome a API REST desenvolvida no repositório backend:
+Este projeto consome a API REST desenvolvida no repositório back-end:
 
-🔗 **Backend da aplicação:**  
+🔗 **Back-end da aplicação:**  
 https://github.com/MichelleGSilva/blog_pessoal
 
 ---
@@ -34,20 +34,20 @@ https://github.com/MichelleGSilva/blog_pessoal
 
 ---
 
-## 🔗 Integração com Backend
+## 🔗 Integração com Back-end
 
-Este frontend está totalmente integrado ao backend disponível em:
+Este front-end está totalmente integrado ao back-end disponível em:
 
 👉 https://github.com/MichelleGSilva/blog_pessoal
 
-O backend é responsável por:
+O back-end é responsável por:
 
 - Autenticação (JWT)
 - Regras de negócio
 - Persistência de dados
 - Endpoints REST para usuários, temas e postagens
 
-⚠️ **Importante:** Para que o frontend funcione corretamente, o backend precisa estar em execução.
+⚠️ **Importante:** Para que o front-end funcione corretamente, o back-end precisa estar em execução.
 
 ---
 
