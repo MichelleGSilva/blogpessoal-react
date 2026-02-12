@@ -1,73 +1,76 @@
-# React + TypeScript + Vite
+# 📝 Blog Pessoal – Frontend (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação frontend desenvolvida em **React** para um sistema de Blog Pessoal, permitindo cadastro, autenticação de usuários e gerenciamento de postagens.
 
-Currently, two official plugins are available:
+Este projeto consome a API REST desenvolvida no repositório backend:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔗 **Backend da aplicação:**  
+https://github.com/MichelleGSilva/blog_pessoal
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Tecnologias Utilizadas
 
-## Expanding the ESLint configuration
+- React
+- TypeScript
+- Axios
+- React Router DOM
+- Context API
+- Material UI
+- Vite
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📌 Funcionalidades
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- ✅ Cadastro de usuário
+- ✅ Login e autenticação
+- ✅ Controle de sessão com token JWT
+- ✅ CRUD de Postagens
+- ✅ CRUD de Temas
+- ✅ Integração completa com API REST
+- ✅ Proteção de rotas privadas
+- ✅ Feedback visual para ações do usuário
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🔗 Integração com Backend
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Este frontend está totalmente integrado ao backend disponível em:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+👉 https://github.com/MichelleGSilva/blog_pessoal
+
+O backend é responsável por:
+
+- Autenticação (JWT)
+- Regras de negócio
+- Persistência de dados
+- Endpoints REST para usuários, temas e postagens
+
+⚠️ **Importante:** Para que o frontend funcione corretamente, o backend precisa estar em execução.
+
+---
+
+## ⚙️ Como executar o projeto localmente
+
+### 1️⃣ Clonar o repositório
+```bash
+git clone https://github.com/MichelleGSilva/blogpessoal-react.git
+
+### 2️⃣ Acessar a pasta do projeto
+cd blogpessoal-react
+
+### 3️⃣ Instalar as dependências
+npm install
+
+### 4️⃣ Configurar a URL da API
+baseURL: 'http://localhost:8080'
+
+### 5️⃣ Executar a aplicação
+npm run dev
+
+
+
+
+
+git clone https://github.com/MichelleGSilva/blogpessoal-react.git
